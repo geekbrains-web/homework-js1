@@ -62,14 +62,15 @@
     </section>
 
     <script>
-        var a = 3, b = 6;
+        var a = 3, b = 6, res;
         if (a>=0 && b>=0) {
-            alert(Math.abs(a-b));
+            res = Math.abs(a-b);
         } else if (a<0 && b<0) {
-            alert(a*b);
+            res = a*b;
         } else {
-            alert(a+b);
+            res = a+b;
         }
+        alert("Задание 3: " + res);
     </script>
     <script>
         var a = parseInt(prompt("Введите число от 0 до 15"));
@@ -115,6 +116,7 @@
         }
     </script>
     <script>
+        //Задания 5 и 6
         function summ(a,b) {
             return a + b;
         }
@@ -150,7 +152,7 @@
             }
             return val * power(val,pow-1);
         }
-        alert(power(a,b));
+        alert(a + "^" + b + " = " + power(a,b));
     </script>
 </body>
 
