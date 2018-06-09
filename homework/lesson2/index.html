@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ДЗ 2 урока</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <section>
+        <h2>Задание 1</h2>
+        <p>Дан код: <br> 
+            var a = 1, b = 1, c, d; <br> 
+            c = ++a; alert(c); // 2 <br> 
+            d = b++; alert(d); // 1 <br> 
+            c = (2+ ++a); alert(c); // 5 <br> 
+            d = (2+ b++); alert(d); // 4 <br> 
+            alert(a); // 3 <br> 
+            alert(b); // 3 <br>
+            <br> 
+            Почему код даёт именно такие результаты?
+        </p>
+        <p>
+            <b>Ответ:</b> <br>
+            Все зависит от последовательности действий с инкрементом, которые отличаются для префиксного (имеет наивысший приоритет) и постфиксного (наименьший приоритет). <br>
+            По строкам: <br>
+            - сначала увеличивается a, потом идет присвоение в c <br>
+            - сначала идет присвоение в d, потом увеличение b <br>
+            - сначала увеличивается a, потом идет сложение и потом присваивание <br>
+            - сначала идет сложение, потом увеличивается b, потом присваивается результат сложения (2+ 2) в d <br>
+            - в итоге и a и b увеличивались 2 раза каждый и результат одинаков 3 и 3
+        </p>
+    </section>
+    <hr>
+    <section>
+        <h2>Задание 2</h2>
+        <p>
+            Чему будет равен x в примере ниже? <br>
+            <br>
+            var a = 2; <br>
+            var x = 1 + (a *= 2);
+        </p>
+        <p>
+            <b>Ответ:</b> <br>
+            x = 5 <br>
+            Сначала идет умножение (2 * 2), получается 4, присваивается в переменную a, затем результат умножения добавляется к 1 и получается 5, что и присваивается в x.
+        </p>
+    </section>
+    <hr>
+    <section>
+        <h2>Задание 7</h2>
+        <p>
+            * Сравнить null и 0. Попробуйте объяснить результат.
+        </p>
+        <p>
+            <b>Ответ:</b> <br>
+            С null можно сравнивать только на равенство и неравенство. Остальные сравнения бесполезны. <br>
+            В данном случае 0 - это значение, а null, как и всегда - это ничто. Приведение типов тут не работает.
+        </p>
+    </section>
+
+    <script>
+        var a = 3, b = 6;
+        if (a>=0 && b>=0) {
+            alert(Math.abs(a-b));
+        } else if (a<0 && b<0) {
+            alert(a*b);
+        } else {
+            alert(a+b);
+        }
+    </script>
+    <script>
+        var a = parseInt(prompt("Введите число от 0 до 15"));
+        if (a>=0 && a<=15) {
+            var res = "";
+            switch (a) {
+                case 0:
+                    res += ",0";
+                case 1:
+                    res += ",1";
+                case 2:
+                    res += ",2";
+                case 3:
+                    res += ",3";
+                case 4:
+                    res += ",4";
+                case 5:
+                    res += ",5";
+                case 6:
+                    res += ",6";
+                case 7:
+                    res += ",7";
+                case 8:
+                    res += ",8";
+                case 9:
+                    res += ",9";
+                case 10:
+                    res += ",10";
+                case 11:
+                    res += ",11";
+                case 12:
+                    res += ",12";
+                case 13:
+                    res += ",13";
+                case 14:
+                    res += ",14";
+                case 15:
+                    res += ",15";
+            }
+            alert(res.substring(1));
+        } else {
+            alert("Введены некорректные данные");
+        }
+    </script>
+    <script>
+        function summ(a,b) {
+            return a + b;
+        }
+        function substr(a,b) {
+            return a - b;
+        }
+        function mult(a,b) {
+            return a * b;
+        }
+        function division(a,b) {
+            return (b==0) ? 0 : a / b;
+        }
+        function oper(a,b,operation) {
+            switch (operation) {
+                case "+":
+                    return summ(a,b);
+                case "-":
+                    return substr(a,b);
+                case "*":
+                    return mult(a,b);
+                case "/":
+                    return division(a,b);
+                default:
+                    return undefined;
+            }
+        }
+    </script>
+    <script>
+        var a = 4, b = 3
+        function power(val,pow) {
+            if (pow == 0) {
+                return 1;
+            }
+            return val * power(val,pow-1);
+        }
+        alert(power(a,b));
+    </script>
+</body>
+
+</html>
