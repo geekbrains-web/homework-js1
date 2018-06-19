@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        var a = parseInt(prompt("Введите число от 0 до 999"));
+        console.log(makeSplit(a));
+
+        function makeSplit(a) {
+            if (isNaN(a)) {
+                return {};
+            }
+            else if (a>999) {
+                return {};
+            }
+            else {
+                var res = {};
+                res.units = a%10;
+                a = parseInt(a/10);
+                res.dozens = a % 10;
+                a = parseInt(a / 10);
+                res.hundreds = a%10;
+                return res;
+            }
+        }
+    </script>
+</body>
+</html>
