@@ -4,8 +4,9 @@ var cartHTML = document.getElementById("cart");
 var buttons = document.querySelectorAll("button");
 console.log(buttons);
 for (var i=0; i<buttons.length;i++) {
-    buttons[i].addEventListener('click',function(){
-        var product = this.parentElement;
+    buttons[i].addEventListener('click',function(event){
+        //console.log(event.target.parentElement);
+        var product = event.target.parentElement;
         cart.push(product.children[0]);
         totalSumm += parseInt(product.children[1].innerHTML);
         var totalHTML = document.getElementById("cart__summValue");
