@@ -1,0 +1,20 @@
+img {
+    max-width: 50%;
+    margin: 0 auto;
+    height: 500px;
+    display: block;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+button {
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: none;    
+}
